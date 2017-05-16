@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.epambootcamp.woddoc.iml" filepath="$PROJECT_DIR$/.idea/modules/com.epambootcamp.woddoc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.epambootcamp.woddoc_main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.epambootcamp.woddoc_main.iml" group="com.epambootcamp.woddoc" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.epambootcamp.woddoc_test.iml" filepath="$PROJECT_DIR$/.idea/modules/com.epambootcamp.woddoc_test.iml" group="com.epambootcamp.woddoc" />
+    </modules>
+  </component>
+</project>

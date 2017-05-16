@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:fragment="head(page_title)" lang="en">
+  <meta charset="UTF-8" />
+  <meta description="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" th:href="@{/favicon.png}" />
+
+  <link rel="stylesheet" th:href="@{/vendor/materialize/css/materialize.css}" />
+  <link rel="stylesheet" th:href="@{/vendor/codrops/css/cs-select.css}" />
+  <link rel="stylesheet" th:href="@{/vendor/codrops/css/cs-skin-border.css}" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One" />
+  <link rel="stylesheet" th:href="@{/app.css}" />
+
+  <title th:text="'woddoc | ' + ${page_title}">woddoc</title>
+</head>
+
+<body>
+
+  <div th:fragment="nav" class="navbar-fixed">
+    <nav class="grey darken-3">
+      <div class="container">
+        <a th:href="@{/}" class="brand-logo">Woddoc</a>
+        <a href="#" data-activates="mobile-nav" class="button-collapse right"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li th:classappend="${#httpServletRequest.servletPath.equals('/') ? 'active' : ''}"><a th:href="@{/}">Home</a></li>
+          <li th:classappend="${#httpServletRequest.servletPath.equals('/upload') ? 'active' : ''}"><a th:href="@{/videotutors}">Exercises</a></li>
+          <li th:classappend="${#httpServletRequest.servletPath.equals('/categories') ? 'active' : ''}"><a th:href="@{/weightprs}">Personal Records</a></li>
+        </ul>
+        <ul id="mobile-nav" class="side-nav">
+          <li th:classappend="${#httpServletRequest.servletPath.equals('/') ? 'active' : ''}"><a th:href="@{/}">Home</a></li>
+          <li th:classappend="${#httpServletRequest.servletPath.equals('/upload') ? 'active' : ''}"><a th:href="@{/videotutors}">Exercises</a></li>
+          <li th:classappend="${#httpServletRequest.servletPath.equals('/categories') ? 'active' : ''}"><a th:href="@{/weightprs}">Personal Records</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div th:fragment="searchbar" class="search-bar container">
+    <div class="row">
+      <div class="col s12">
+        <form th:action="@{/search}" method="get">
+          <div class="input-field">
+            <input name="q" type="search" placeholder="Search exercise..." required="required" autocomplete="off" />
+            <i class="material-icons">search</i>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <footer th:fragment="footer" class="page-footer grey darken-3">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">TODO:</h5>
+          <p class="grey-text text-lighten-4">Login, Chart, WOD Planner</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Admin</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright  grey darken-2">
+      <div class="container center">
+        2017. Tamas Szabo
+      </div>
+    </div>
+  </footer>
+
+
+  <div th:fragment="flash" th:if="${flash != null}" class="container">
+    <i class="right material-icons" data-close="">close</i>
+    <div th:classappend="${#strings.toLowerCase(flash.status)}" th:text="${flash.message}" class="flash"></div>
+  </div>
+
+  <div th:fragment="scripts">
+    <script th:src="@{/vendor/jquery/jquery-1.11.3.js}"></script>
+    <script th:src="@{/vendor/materialize/js/materialize.js}"></script>
+    <script th:src="@{/vendor/codrops/js/classie.js}"></script>
+    <script th:src="@{/vendor/codrops/js/selectFx.js}"></script>
+    <script th:src="@{/app.js}"></script>
+    <script th:src="@{/modal.js}"></script>
+  </div>
+
+</body>
+
+</html>

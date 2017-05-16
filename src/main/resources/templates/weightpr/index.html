@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout :: head('videotutors')"></head>
+
+<body>
+
+  <header>
+    <div th:replace="layout :: nav"></div>
+  </header>
+
+  <main>
+    <div th:replace="layout :: flash"></div>
+    <div class="record container">
+      <div class="row">
+        <div class="col s9">
+          <h2>Personal Records</h2>
+        </div>
+        <div class="col s3">
+          <a class="right add" href="/weightprs/add"><i class="small material-icons icon-white">input</i></a>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="row">
+        <div th:each="rec : ${weightPRs}" class="col s12 l4">
+          <div class="card blue-grey lighten-1">
+            <div class="card-content">
+              <div class="card-title">
+                <a class="exerciseName" th:href="@{|/weightPRs/${rec.id}|}" th:text="${rec.exerciseName}">Exercise Name</a>
+                <a class="record" th:href="@{|/weightPRs/${rec.id}|}" th:text="${rec.record} + ' ' + ${rec.weightUnit}">Personal Record</a>
+                <a class="edit-pr" th:href="@{|/weightprs/${rec.id}/edit|}"><i class="hide-on-med-and-down material-icons">settings</i><i class="hide-on-large-only medium material-icons">settings</i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div th:replace="layout :: footer"></div>
+  <div th:replace="layout :: scripts"></div>
+</body>
+
+</html>
