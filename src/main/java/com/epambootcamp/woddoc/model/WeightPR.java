@@ -2,6 +2,7 @@ package com.epambootcamp.woddoc.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 
 @Entity
@@ -18,6 +19,7 @@ public class WeightPR {
     private String weightUnit;
 
     @NotNull
+    @Size(min = 1, max = 500)
     private int record;
 
     public WeightPR() {

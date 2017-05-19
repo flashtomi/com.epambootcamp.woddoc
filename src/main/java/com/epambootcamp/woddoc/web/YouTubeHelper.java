@@ -1,11 +1,8 @@
 package com.epambootcamp.woddoc.web;
 
-import groovy.lang.Singleton;
-
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
-@Singleton
 public class YouTubeHelper {
 
     final String youTubeUrlRegEx = "^(https?)?(://)?(www.)?(m.)?((youtube.com)|(youtu.be))/";

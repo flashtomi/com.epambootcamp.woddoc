@@ -1,4 +1,4 @@
-package com.epambootcamp.woddoc.web;
+package com.epambootcamp.woddoc.web.controller;
 
 public enum ExerciseNames {
     SNATCH("Snatch"),
