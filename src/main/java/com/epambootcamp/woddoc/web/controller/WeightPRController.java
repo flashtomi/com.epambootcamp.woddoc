@@ -3,9 +3,7 @@ package com.epambootcamp.woddoc.web.controller;
 
 import com.epambootcamp.woddoc.model.WeightPR;
 import com.epambootcamp.woddoc.service.WeightPRService;
-import com.epambootcamp.woddoc.web.ExerciseNames;
 import com.epambootcamp.woddoc.web.FlashMessage;
-import com.epambootcamp.woddoc.web.WeightUnit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
